@@ -31,7 +31,7 @@ steps:
 - task: CopyFiles@2
   inputs:
     Contents: 'pom.xml'
-    TargetFolder: 'Test'
+    TargetFolder: 'Testasdasd'
 #- task: PublishCodeCoverageResults@1
 #  inputs:
 #    codeCoverageTool: 'JaCoCo'
