@@ -25,7 +25,13 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
-
+- task: CmdLine@2
+  inputs:
+    script: 'mkdir Test'
+- task: CopyFiles@2
+  inputs:
+    Contents: 'pom.xml'
+    TargetFolder: 'Test'
 #- task: PublishCodeCoverageResults@1
 #  inputs:
 #    codeCoverageTool: 'JaCoCo'
