@@ -34,3 +34,8 @@ steps:
 #    codeCoverageTool: 'JaCoCo'
 #    summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/target/site/jacoco-aggregate/jacoco.xml'
 #    reportDirectory: '$(System.DefaultWorkingDirectory)/coverage/target/site/jacoco-aggregate'
+- task: CmdLine@2
+  inputs:
+    script: |
+      cd Test
+      dir
