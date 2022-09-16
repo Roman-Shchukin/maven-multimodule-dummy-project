@@ -25,17 +25,19 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
-- task: CopyFiles@2.209.0
-  inputs:
-    Contents: 'pom.xml'
-    TargetFolder: 'Test'
-#- task: PublishCodeCoverageResults@1
+#- task: CopyFiles@2.209.0
 #  inputs:
-#    codeCoverageTool: 'JaCoCo'
-#    summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/target/site/jacoco-aggregate/jacoco.xml'
-#    reportDirectory: '$(System.DefaultWorkingDirectory)/coverage/target/site/jacoco-aggregate'
+#    Contents: 'pom.xml'
+#    TargetFolder: 'Test'
 - task: CmdLine@2
   inputs:
     script: |
-      cd Test
+      dir
+- task: DeleteFiles@1
+  inputs:
+    SourceFolder: 
+    Contents: 'pom.xml'
+- task: CmdLine@2
+  inputs:
+    script: |
       dir
