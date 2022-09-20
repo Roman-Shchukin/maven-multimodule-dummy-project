@@ -18,7 +18,7 @@ steps:
   inputs:
     knownHostsEntry: 'ssh-ed25519:AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl'
     sshKeySecureFile: 'github_roman-shchukin.ppk'
-    sshPublicKey: 'AAAAC3NzaC1lZDI1NTE5AAAAILqHeOQOLP8EL7n1qh2Ni7R9U6WDBnynx/CCXJVk'
+    sshPublicKey: 'ddsa-key-20220824 AAAAC3NzaC1lZDI1NTE5AAAAILqHeOQOLP8EL7n1qh2Ni7R9U6WDBnynx/CCXJVk'
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
