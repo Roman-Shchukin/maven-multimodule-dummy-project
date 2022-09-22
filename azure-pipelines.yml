@@ -6,7 +6,7 @@
 trigger:
 - master
 
-pool: Azure Pipelines
+pool: Default
 
 steps:
 #- task: JavaToolInstaller@0
@@ -19,7 +19,6 @@ steps:
     knownHostsEntry: 'ssh-ed25519:AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl'
     sshKeySecureFile: 'id_rsa'
     sshPublicKey: $(myPubKey)
-    retrieveSecret: 2
 #- task: Maven@3
 #  inputs:
 #    mavenPomFile: 'pom.xml'
