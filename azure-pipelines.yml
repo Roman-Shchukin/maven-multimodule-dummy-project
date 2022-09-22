@@ -14,7 +14,7 @@ steps:
 #    versionSpec: '8'
 #    jdkArchitectureOption: 'x64'
 #    jdkSourceOption: 'PreInstalled'
-- task: InstallSSHKey@0.211.0
+- task: InstallSSHKey@0.211.2
   inputs:
     knownHostsEntry: 'ssh-ed25519:AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl'
     sshKeySecureFile: 'id_rsa'
