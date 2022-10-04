@@ -9,45 +9,19 @@ trigger:
 pool: Azure Pipelines
 
 steps:
-#- task: JavaToolInstaller@0
-#  inputs:
-#    versionSpec: '8'
-#    jdkArchitectureOption: 'x64'
-#    jdkSourceOption: 'PreInstalled'
-#- task: InstallSSHKey@0.211.2
-#  inputs:
-#    knownHostsEntry: 'ssh-ed25519:AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl'
-#    sshKeySecureFile: 'id_rsa'
-#    sshPublicKey: $(myPubKey)
-#- task: Maven@3
-#  inputs:
-#    mavenPomFile: 'pom.xml'
-#    goals: 'clean verify'
-#    options: '-U -B'
-#    publishJUnitResults: true
-#    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-##    codeCoverageToolOption: 'JaCoCo'
-##    codeCoverageClassFilesDirectories: 'module1/target/classes,module2/target/classes'
-##    codeCoverageSourceDirectories: 'module1/src,module2/src'
-#    javaHomeOption: 'JDKVersion'
-#    mavenVersionOption: 'Default'
-#    mavenOptions: '-Xmx3072m'
-#    mavenAuthenticateFeed: false
-#    effectivePomSkip: false
-#    sonarQubeRunAnalysis: false
-#- task: CopyFiles@2.209.0
-#  inputs:
-#    Contents: 'pom.xml'
-#    TargetFolder: 'Test'
-#- task: CmdLine@2
-#  inputs:
-#    script: |
-#      dir
-- task: DeleteFiles@1
+- task: Maven@3
   inputs:
-    SourceFolder: 
-    Contents: 'pom.xml'
-- task: CmdLine@2
-  inputs:
-    script: |
-     dir
+    mavenPomFile: 'pom.xml'
+    goals: 'clean verify'
+    options: '-U -B'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+#    codeCoverageToolOption: 'JaCoCo'
+#    codeCoverageClassFilesDirectories: 'module1/target/classes,module2/target/classes'
+#    codeCoverageSourceDirectories: 'module1/src,module2/src'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenOptions: '-Xmx3072m'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
