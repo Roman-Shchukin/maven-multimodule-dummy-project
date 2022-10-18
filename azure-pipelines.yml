@@ -11,7 +11,22 @@ jobs:
   - job: macos_test
     pool:
         vmImage: macos-latest
+    steps:
+    - task: UseRubyVersion@0
+      inputs:
+          versionSpec: '>= 2.4'
 
+  - job: windows_test
+    pool:
+        vmImage: windows-latest
+    steps:
+    - task: UseRubyVersion@0
+      inputs:
+          versionSpec: '>= 2.4'
+
+  - job: ubuntu_test
+    pool:
+      vmImage: ubuntu-latest
     steps:
     - task: UseRubyVersion@0
       inputs:
