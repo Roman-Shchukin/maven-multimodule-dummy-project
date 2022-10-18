@@ -8,7 +8,7 @@
 #    - master
 
 jobs:
-  - job: macos-test
+  - job: macos_test
     pool:
         vmImage: macos-latest
 
