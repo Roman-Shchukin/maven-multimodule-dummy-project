@@ -12,23 +12,26 @@ jobs:
     pool:
         vmImage: macos-latest
     steps:
-    - task: UseNode@1.212.0
+    - task: NodeTool@0
       inputs:
-        version: '10.x'
+        versionSource: 'spec'
+        versionSpec: '6.x'
 
   - job: windows_test
     pool:
         vmImage: windows-latest
     steps:
-    - task: UseNode@1.212.0
+    - task: NodeTool@0
       inputs:
-        version: '10.x'
+        versionSource: 'spec'
+        versionSpec: '6.x'
 
 
   - job: ubuntu_test
     pool:
       vmImage: ubuntu-latest
     steps:
-    - task: UseNode@1.212.0
+    - task: NodeTool@0
       inputs:
-        version: '10.x'
+        versionSource: 'spec'
+        versionSpec: '6.x'
