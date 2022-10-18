@@ -8,13 +8,6 @@
 #    - master
 
 jobs:
-  - job: Azure_Pipelines_test
-    pool: Azure Pipelines
-    steps:
-    - task: NodeTool@0
-      inputs:
-        versionSource: 'spec'
-        versionSpec: '6.x'
   - job: macos_test
     pool:
         vmImage: macos-latest
