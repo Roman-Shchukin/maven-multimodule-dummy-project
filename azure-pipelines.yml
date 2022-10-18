@@ -12,7 +12,7 @@ jobs:
     pool:
         vmImage: macos-latest
     steps:
-    - task: UseNode@1
+    - task: UseNode@1.212.0
       inputs:
         version: '10.x'
 
@@ -20,7 +20,7 @@ jobs:
     pool:
         vmImage: windows-latest
     steps:
-    - task: UseNode@1
+    - task: UseNode@1.212.0
       inputs:
         version: '10.x'
 
@@ -29,6 +29,6 @@ jobs:
     pool:
       vmImage: ubuntu-latest
     steps:
-    - task: UseNode@1
+    - task: UseNode@1.212.0
       inputs:
         version: '10.x'
