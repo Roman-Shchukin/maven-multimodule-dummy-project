@@ -9,19 +9,22 @@ trigger:
 pool: Azure Pipelines
 
 steps:
-- task: Maven@4
+- task: UseRubyVersion@0
   inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'clean verify'
-    options: '-U -B'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    codeCoverageToolOption: 'JaCoCo'
-#    codeCoverageClassFilesDirectories: 'module1/target/classes,module2/target/classes'
-#    codeCoverageSourceDirectories: 'module1/src,module2/src'
-    javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenOptions: '-Xmx3072m'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: false
+    versionSpec: '>= 2.4'
+#- task: Maven@4
+#  inputs:
+#    mavenPomFile: 'pom.xml'
+#    goals: 'clean verify'
+#    options: '-U -B'
+#    publishJUnitResults: true
+#    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+#    codeCoverageToolOption: 'JaCoCo'
+##    codeCoverageClassFilesDirectories: 'module1/target/classes,module2/target/classes'
+##    codeCoverageSourceDirectories: 'module1/src,module2/src'
+#    javaHomeOption: 'JDKVersion'
+#    mavenVersionOption: 'Default'
+#    mavenOptions: '-Xmx3072m'
+#    mavenAuthenticateFeed: false
+#    effectivePomSkip: false
+#    sonarQubeRunAnalysis: false
