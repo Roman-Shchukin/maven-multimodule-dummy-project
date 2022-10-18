@@ -12,22 +12,28 @@ jobs:
     pool:
         vmImage: macos-latest
     steps:
-    - task: UseRubyVersion@0
+    - task: UsePythonVersion@0
       inputs:
-          versionSpec: '>= 2.4'
+        versionSpec: '3.x'
+        addToPath: true
+        architecture: 'x64'
 
   - job: windows_test
     pool:
         vmImage: windows-latest
     steps:
-    - task: UseRubyVersion@0
+    - task: UsePythonVersion@0
       inputs:
-          versionSpec: '>= 2.4'
+        versionSpec: '3.x'
+        addToPath: true
+        architecture: 'x64'
 
   - job: ubuntu_test
     pool:
       vmImage: ubuntu-latest
     steps:
-    - task: UseRubyVersion@0
+    - task: UsePythonVersion@0
       inputs:
-          versionSpec: '>= 2.4'
+        versionSpec: '3.x'
+        addToPath: true
+        architecture: 'x64'
