@@ -3,28 +3,16 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
-trigger:
-- master
 
-pool: Azure Pipelines
+jobs:
+  - job: macos-test
+    pool:
+        vmImage: macos-latest
+        
+    trigger:
+    - master
 
-steps:
-- task: UseRubyVersion@0
-  inputs:
-    versionSpec: '>= 2.4'
-#- task: Maven@4
-#  inputs:
-#    mavenPomFile: 'pom.xml'
-#    goals: 'clean verify'
-#    options: '-U -B'
-#    publishJUnitResults: true
-#    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-#    codeCoverageToolOption: 'JaCoCo'
-##    codeCoverageClassFilesDirectories: 'module1/target/classes,module2/target/classes'
-##    codeCoverageSourceDirectories: 'module1/src,module2/src'
-#    javaHomeOption: 'JDKVersion'
-#    mavenVersionOption: 'Default'
-#    mavenOptions: '-Xmx3072m'
-#    mavenAuthenticateFeed: false
-#    effectivePomSkip: false
-#    sonarQubeRunAnalysis: false
+    steps:
+    - task: UseRubyVersion@0
+      inputs:
+          versionSpec: '>= 2.4'
