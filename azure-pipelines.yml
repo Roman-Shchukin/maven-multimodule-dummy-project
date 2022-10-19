@@ -12,38 +12,26 @@ jobs:
     pool:
         vmImage: macos-latest
     steps:
-    - task: SSH@0.212.0
-      inputs:
-        sshEndpoint: 'n148_local'
-        runOptions: 'inline'
-        inline: |
-          cd /etc
-          ls
-        readyTimeout: '20000'
+      - task: PythonScript@0
+        inputs:
+          scriptSource: inline
+          script: print("Hello", "how are you?")
 
   - job: windows_test
     pool:
         vmImage: windows-latest
     steps:
-    - task: SSH@0.212.0
-      inputs:
-        sshEndpoint: 'n148_local'
-        runOptions: 'inline'
-        inline: |
-          cd /etc
-          ls
-        readyTimeout: '20000'
+      - task: PythonScript@0
+        inputs:
+          scriptSource: inline
+          script: print("Hello", "how are you?")
 
 
   - job: ubuntu_test
     pool:
       vmImage: ubuntu-latest
     steps:
-    - task: SSH@0.212.0
-      inputs:
-        sshEndpoint: 'n148_local'
-        runOptions: 'inline'
-        inline: |
-          cd /etc
-          ls
-        readyTimeout: '20000'
+      - task: PythonScript@0
+        inputs:
+          scriptSource: inline
+          script: print("Hello", "how are you?")
