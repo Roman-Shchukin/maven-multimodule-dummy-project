@@ -12,26 +12,22 @@ jobs:
     pool:
         vmImage: macos-latest
     steps:
-      - task: PythonScript@0
+      - task: PowerShell@2
         inputs:
-          scriptSource: inline
-          script: print("Hello", "how are you?")
+          filePath: 'test.ps1'
 
   - job: windows_test
     pool:
         vmImage: windows-latest
     steps:
-      - task: PythonScript@0
+      - task: PowerShell@2
         inputs:
-          scriptSource: inline
-          script: print("Hello", "how are you?")
-
+          filePath: 'test.ps1'
 
   - job: ubuntu_test
     pool:
       vmImage: ubuntu-latest
     steps:
-      - task: PythonScript@0
+      - task: PowerShell@2
         inputs:
-          scriptSource: inline
-          script: print("Hello", "how are you?")
+          filePath: 'test.ps1'
