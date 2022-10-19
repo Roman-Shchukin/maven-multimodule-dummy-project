@@ -19,7 +19,7 @@ jobs:
         inline: |
           cd /etc
           ls
-    readyTimeout: '20000'
+        readyTimeout: '20000'
 
   - job: windows_test
     pool:
@@ -32,7 +32,7 @@ jobs:
         inline: |
           cd /etc
           ls
-    readyTimeout: '20000'
+        readyTimeout: '20000'
 
 
   - job: ubuntu_test
@@ -46,4 +46,4 @@ jobs:
         inline: |
           cd /etc
           ls
-    readyTimeout: '20000'
+        readyTimeout: '20000'
