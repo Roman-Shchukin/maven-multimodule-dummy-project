@@ -12,6 +12,8 @@ jobs:
     pool:
         vmImage: macos-latest
     steps:
+    - script: |
+          gem install cocoapods
     - task: CocoaPods@0
       inputs:
         forceRepoUpdate: false
@@ -20,6 +22,8 @@ jobs:
     pool:
         vmImage: windows-latest
     steps:
+    - script: |
+          gem install cocoapods
     - task: CocoaPods@0
       inputs:
         forceRepoUpdate: false
@@ -28,6 +32,8 @@ jobs:
     pool:
       vmImage: ubuntu-latest
     steps:
+    - script: |
+          gem install cocoapods
     - task: CocoaPods@0
       inputs:
         forceRepoUpdate: false
