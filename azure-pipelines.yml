@@ -12,58 +12,22 @@ jobs:
     pool:
         vmImage: macos-latest
     steps:
-    - task: Maven@4
+    - task: CocoaPods@0
       inputs:
-        mavenPomFile: 'pom.xml'
-        goals: 'clean verify -X'
-        publishJUnitResults: true
-        testResultsFiles: '**/surefire-reports/TEST-*.xml'
-        codeCoverageToolOption: 'JaCoCo'
-        javaHomeOption: 'JDKVersion'
-        mavenVersionOption: 'Default'
-        mavenAuthenticateFeed: false
-        effectivePomSkip: false
-    #    sonarQubeRunAnalysis: true
-        isJacocoCoverageReportXML: true
-        sqMavenPluginVersionChoice: 'latest'
-    #    codeCoverageClassFilter: '-:com.acme.module1.Module1'
+        forceRepoUpdate: false
 
   - job: windows_test
     pool:
         vmImage: windows-latest
     steps:
-    - task: Maven@4
+    - task: CocoaPods@0
       inputs:
-        mavenPomFile: 'pom.xml'
-        goals: 'clean verify -X'
-        publishJUnitResults: true
-        testResultsFiles: '**/surefire-reports/TEST-*.xml'
-        codeCoverageToolOption: 'JaCoCo'
-        javaHomeOption: 'JDKVersion'
-        mavenVersionOption: 'Default'
-        mavenAuthenticateFeed: false
-        effectivePomSkip: false
-    #    sonarQubeRunAnalysis: true
-        isJacocoCoverageReportXML: true
-        sqMavenPluginVersionChoice: 'latest'
-    #    codeCoverageClassFilter: '-:com.acme.module1.Module1'
+        forceRepoUpdate: false
 
   - job: ubuntu_test
     pool:
       vmImage: ubuntu-latest
     steps:
-    - task: Maven@4
+    - task: CocoaPods@0
       inputs:
-        mavenPomFile: 'pom.xml'
-        goals: 'clean verify -X'
-        publishJUnitResults: true
-        testResultsFiles: '**/surefire-reports/TEST-*.xml'
-        codeCoverageToolOption: 'JaCoCo'
-        javaHomeOption: 'JDKVersion'
-        mavenVersionOption: 'Default'
-        mavenAuthenticateFeed: false
-        effectivePomSkip: false
-    #    sonarQubeRunAnalysis: true
-        isJacocoCoverageReportXML: true
-        sqMavenPluginVersionChoice: 'latest'
-    #    codeCoverageClassFilter: '-:com.acme.module1.Module1'
+        forceRepoUpdate: false
