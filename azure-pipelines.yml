@@ -12,22 +12,22 @@ jobs:
     pool:
         vmImage: macos-latest
     steps:
-      - task: PowerShell@2.213.1
-        inputs:
-          filePath: 'test.ps1'
+    - task: ShellScript@2
+      inputs:
+        scriptPath: 'test.sh'
 
   - job: windows_test
     pool:
         vmImage: windows-latest
     steps:
-      - task: PowerShell@2.213.1
-        inputs:
-          filePath: 'test.ps1'
+    - task: ShellScript@2
+      inputs:
+        scriptPath: 'test.sh'
 
   - job: ubuntu_test
     pool:
       vmImage: ubuntu-latest
     steps:
-      - task: PowerShell@2.213.1
-        inputs:
-          filePath: 'test.ps1'
+    - task: ShellScript@2
+      inputs:
+        scriptPath: 'test.sh'
