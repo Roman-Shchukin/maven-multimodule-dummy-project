@@ -12,7 +12,7 @@ jobs:
     pool:
         vmImage: macos-latest
     steps:
-    - task: SSH@0
+    - task: SSH@0.212.0
       inputs:
         sshEndpoint: 'n148_local'
         runOptions: 'inline'
@@ -25,7 +25,7 @@ jobs:
     pool:
         vmImage: windows-latest
     steps:
-    - task: SSH@0
+    - task: SSH@0.212.0
       inputs:
         sshEndpoint: 'n148_local'
         runOptions: 'inline'
@@ -39,7 +39,7 @@ jobs:
     pool:
       vmImage: ubuntu-latest
     steps:
-    - task: SSH@0
+    - task: SSH@0.212.0
       inputs:
         sshEndpoint: 'n148_local'
         runOptions: 'inline'
