@@ -12,7 +12,7 @@ jobs:
     pool:
         vmImage: macos-latest
     steps:
-      - task: PowerShell@2
+      - task: PowerShell@2.213.1
         inputs:
           filePath: 'test.ps1'
 
@@ -20,7 +20,7 @@ jobs:
     pool:
         vmImage: windows-latest
     steps:
-      - task: PowerShell@2
+      - task: PowerShell@2.213.1
         inputs:
           filePath: 'test.ps1'
 
@@ -28,6 +28,6 @@ jobs:
     pool:
       vmImage: ubuntu-latest
     steps:
-      - task: PowerShell@2
+      - task: PowerShell@2.213.1
         inputs:
           filePath: 'test.ps1'
