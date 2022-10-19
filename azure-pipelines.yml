@@ -12,26 +12,38 @@ jobs:
     pool:
         vmImage: macos-latest
     steps:
-    - task: NodeTool@0.212.0
+    - task: SSH@0
       inputs:
-        versionSource: 'spec'
-        versionSpec: '6.x'
+        sshEndpoint: 'n148_local'
+        runOptions: 'inline'
+        inline: |
+          cd /etc
+          ls
+    readyTimeout: '20000'
 
   - job: windows_test
     pool:
         vmImage: windows-latest
     steps:
-    - task: NodeTool@0.212.0
+    - task: SSH@0
       inputs:
-        versionSource: 'spec'
-        versionSpec: '6.x'
+        sshEndpoint: 'n148_local'
+        runOptions: 'inline'
+        inline: |
+          cd /etc
+          ls
+    readyTimeout: '20000'
 
 
   - job: ubuntu_test
     pool:
       vmImage: ubuntu-latest
     steps:
-    - task: NodeTool@0.212.0
+    - task: SSH@0
       inputs:
-        versionSource: 'spec'
-        versionSpec: '6.x'
+        sshEndpoint: 'n148_local'
+        runOptions: 'inline'
+        inline: |
+          cd /etc
+          ls
+    readyTimeout: '20000'
