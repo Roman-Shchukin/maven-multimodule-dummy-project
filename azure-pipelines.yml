@@ -12,22 +12,58 @@ jobs:
     pool:
         vmImage: macos-latest
     steps:
-    - task: ShellScript@2
+    - task: Maven@4
       inputs:
-        scriptPath: 'test.sh'
+        mavenPomFile: 'pom.xml'
+        goals: 'clean verify -X'
+        publishJUnitResults: true
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
+        codeCoverageToolOption: 'JaCoCo'
+        javaHomeOption: 'JDKVersion'
+        mavenVersionOption: 'Default'
+        mavenAuthenticateFeed: false
+        effectivePomSkip: false
+    #    sonarQubeRunAnalysis: true
+        isJacocoCoverageReportXML: true
+        sqMavenPluginVersionChoice: 'latest'
+    #    codeCoverageClassFilter: '-:com.acme.module1.Module1'
 
   - job: windows_test
     pool:
         vmImage: windows-latest
     steps:
-    - task: ShellScript@2
+    - task: Maven@4
       inputs:
-        scriptPath: 'test.sh'
+        mavenPomFile: 'pom.xml'
+        goals: 'clean verify -X'
+        publishJUnitResults: true
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
+        codeCoverageToolOption: 'JaCoCo'
+        javaHomeOption: 'JDKVersion'
+        mavenVersionOption: 'Default'
+        mavenAuthenticateFeed: false
+        effectivePomSkip: false
+    #    sonarQubeRunAnalysis: true
+        isJacocoCoverageReportXML: true
+        sqMavenPluginVersionChoice: 'latest'
+    #    codeCoverageClassFilter: '-:com.acme.module1.Module1'
 
   - job: ubuntu_test
     pool:
       vmImage: ubuntu-latest
     steps:
-    - task: ShellScript@2
+    - task: Maven@4
       inputs:
-        scriptPath: 'test.sh'
+        mavenPomFile: 'pom.xml'
+        goals: 'clean verify -X'
+        publishJUnitResults: true
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
+        codeCoverageToolOption: 'JaCoCo'
+        javaHomeOption: 'JDKVersion'
+        mavenVersionOption: 'Default'
+        mavenAuthenticateFeed: false
+        effectivePomSkip: false
+    #    sonarQubeRunAnalysis: true
+        isJacocoCoverageReportXML: true
+        sqMavenPluginVersionChoice: 'latest'
+    #    codeCoverageClassFilter: '-:com.acme.module1.Module1'
