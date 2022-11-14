@@ -14,7 +14,7 @@ steps:
     inputs:
       packageName: ktsn-npm-package-example
       version: 1.0.1
-      externalEndpoints: https://github.com/ktsn/npm-package-example.git
+      externalEndpoints: github.com_Roman-Shchukin
 #jobs:
 #  - job: macos_test
 #    pool:
