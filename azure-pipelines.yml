@@ -12,7 +12,7 @@ pool:
 steps:
   - task: DownloadGithubNpmPackage@1
     inputs:
-      packageName: ktsn-npm-package-example
+      packageName: "@roman-shchukin/ktsn-npm-package-example"
       version: 1.0.1
       externalEndpoints: github.com_Roman-Shchukin
 #jobs:
