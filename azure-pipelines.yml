@@ -14,6 +14,9 @@ jobs:
     pool:
         vmImage: macos-latest
     steps:
+    - task: CmdLine@2
+      inputs:
+        script: 'ls'
     - task: npmAuthenticate@0
       inputs:
         workingFile: .npmrc
